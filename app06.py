@@ -677,31 +677,31 @@ def get_plant_details(plant_id):
         print(f"Error in get_plant_details: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-if __name__ == "__main__":
-    print("🏭 Enhanced Plant Monitoring System with Authentication Starting...")
-    print("=" * 60)
-    print("Plant Configuration:")
-    total_units = 0
-    for plant_id, unit_count in PLANT_CONFIG.items():
-        plant_name = PLANT_NAMES.get(plant_id, f"Plant{plant_id}")
-        print(f"  Plant {plant_id} ({plant_name}): {unit_count} units")
-        total_units += unit_count
-    print(f"Total Units Across All Plants: {total_units}")
-    print(f"Current Colombo Time: {get_colombo_time().strftime('%Y-%m-%d %H:%M:%S %Z')}")
-    print("\nDatabase Schema Enhanced with:")
-    print("  ✅ User Authentication System")
-    print("  ✅ Registration & Login")
-    print("  ✅ Session Management")
-    print("  ✅ 3-Phase Current Measurements (L1, L2, L3)")
-    print("  ✅ 3-Phase Voltage Measurements (L12, L23, L13)")
-    print("  ✅ Power, Energy, and Runtime")
-    print("  ✅ Calculated Averages")
-    print("  ✅ ESP32 JSON Format Parser")
-    print("\nAccess Points:")
-    print("  🔐 Login: http://localhost:5000/login")
-    print("  📝 Register: http://localhost:5000/register")
-    print("  🏭 Dashboard: http://localhost:5000/ (requires login)")
-    print("=" * 60)
+# if __name__ == "__main__":
+#     print("🏭 Enhanced Plant Monitoring System with Authentication Starting...")
+#     print("=" * 60)
+#     print("Plant Configuration:")
+#     total_units = 0
+#     for plant_id, unit_count in PLANT_CONFIG.items():
+#         plant_name = PLANT_NAMES.get(plant_id, f"Plant{plant_id}")
+#         print(f"  Plant {plant_id} ({plant_name}): {unit_count} units")
+#         total_units += unit_count
+#     print(f"Total Units Across All Plants: {total_units}")
+#     print(f"Current Colombo Time: {get_colombo_time().strftime('%Y-%m-%d %H:%M:%S %Z')}")
+#     print("\nDatabase Schema Enhanced with:")
+#     print("  ✅ User Authentication System")
+#     print("  ✅ Registration & Login")
+#     print("  ✅ Session Management")
+#     print("  ✅ 3-Phase Current Measurements (L1, L2, L3)")
+#     print("  ✅ 3-Phase Voltage Measurements (L12, L23, L13)")
+#     print("  ✅ Power, Energy, and Runtime")
+#     print("  ✅ Calculated Averages")
+#     print("  ✅ ESP32 JSON Format Parser")
+#     print("\nAccess Points:")
+#     print("  🔐 Login: http://localhost:5000/login")
+#     print("  📝 Register: http://localhost:5000/register")
+#     print("  🏭 Dashboard: http://localhost:5000/ (requires login)")
+#     print("=" * 60)
     
-    app.run(port=5000, debug=True, threaded=True)
+#     app.run(port=5000, debug=True, threaded=True)
 
