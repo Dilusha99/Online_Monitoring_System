@@ -192,10 +192,10 @@ def main():
         else:
             print("\n❌ Invalid choice! Please enter 1-5.")
 
-if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("\n\n👋 Goodbye!")
-    except Exception as e:
-        print(f"\n❌ An error occurred: {str(e)}")
+# if __name__ == "__main__":
+#     try:
+#         main()
+#     except KeyboardInterrupt:
+#         print("\n\n👋 Goodbye!")
+#     except Exception as e:
+#         print(f"\n❌ An error occurred: {str(e)}")
