@@ -15,8 +15,8 @@ adapter = HTTPAdapter(max_retries=retry_strategy)
 session.mount("http://", adapter)
 session.mount("https://", adapter)
 
-#URL = "http://127.0.0.1:5000/data"
-URL = "https://ineffaceably-unguarded-evelina.ngrok-free.dev/data"
+URL = "http://127.0.0.1:5000/data"
+#URL = "https://ineffaceably-unguarded-evelina.ngrok-free.dev/data"
 PLANT_NAMES = {
     1: "pta", 2: "bgd", 3: "tha", 4: "klp", 5: "gru",
     6: "ww1", 7: "ww2", 8: "gam", 9: "weg", 10: "fav",
