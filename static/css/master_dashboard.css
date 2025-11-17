@@ -1,0 +1,358 @@
+/* static/css/master_dashboard.css */
+
+/* Global Styles */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Arial', sans-serif; 
+    background: #201D47;
+    background: radial-gradient(circle, rgba(32, 29, 71, 1) 0%, rgba(23, 21, 58, 1) 100%); 
+    min-height: 100vh;
+}
+
+/* Header Styles */
+/* ===== HEADER MAIN CONTAINER ===== */
+.header { 
+    background: linear-gradient(135deg, #363535 0%, #0a0212 100%); 
+    /* background color gradient (135° diagonal from light blue to purple) */
+
+    color: white; 
+    /* text color inside header */
+
+    padding: 20px 0; 
+    /* top and bottom spacing of the header */
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    /* subtle shadow below the header for depth */
+
+    position:relative;
+    /* allows positioning of child elements if needed (like absolute placement) */
+}
+
+/* ===== CENTERED CONTENT AREA ===== */
+.header-content { 
+    max-width: 2500px; 
+    /* limits header content width to avoid stretching too wide on large screens */
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    /* centers content horizontally */
+
+    text-align: center;
+    /* centers text and inline elements horizontally */
+    
+    padding: 0 20px; 
+    /* left-right padding for spacing inside */
+}
+
+/* ===== DATE & TIME CONTAINER ===== */
+.header-date {
+    max-width: 1000px;
+    /* restricts width of the datetime box */
+    margin:0 auto;
+    /* centers it horizontally */
+    position: absolute;
+    top: 20px;
+    left : 10px;
+    text-align: left;
+    /* aligns datetime text to the left within the box */
+    
+    padding: 0 10px;
+    /* inner horizontal spacing */
+}
+
+/* ===== MAIN HEADER TITLE ===== */
+.header h1, .header h2 { 
+    font-size: 2em; 
+    /* size of main title */
+
+    margin-bottom: 10px; 
+    /* space below the title */
+
+    font-weight: 600;
+    /* slightly bold title */
+}
+
+/* ===== SUBTITLE TEXT ===== */
+.header .subtitle { 
+    font-size: 1.3em; 
+    /* size smaller than main title */
+
+    opacity: 0.9; 
+    /* makes it slightly transparent (lighter color effect) */
+
+    margin-bottom: 10px;
+}
+
+/* ===== CURRENT DATE TIME ===== */
+.header .datetime { 
+    font-size: 1.1em; 
+    /* smaller text size for datetime */
+    opacity: 0.8; 
+    /* lightens color slightly for less emphasis */
+    
+    margin-top: 10px; 
+}
+
+/* ===== TIMEZONE LABEL ===== */
+.timezone-info {
+    background: rgba(255,255,255,0.1);
+    /* semi-transparent white background */
+
+    padding: 5px 5px;
+    /* inner space (top/bottom, left/right) */
+
+    border-radius: 15px;
+    /* rounded edges for a pill-shaped badge */
+
+    font-size: 0.8em;
+    /* smaller font size */
+
+    margin-top: 5px;
+    /* spacing above the badge */
+
+    display: inline-block;
+    /* makes it wrap neatly around text */
+}
+
+/* ===== USER MENU (RIGHT CORNER) ===== */
+.header-user-menu {
+    position: absolute;
+    /* allows manual positioning inside the header */
+
+    top: 20px;
+    /* distance from top of header */
+
+    right: 30px;
+    /* distance from right side */
+
+    font-size: 1em;
+    /* text size for user menu */
+}
+
+.header-user-menu .user-greeting {
+    margin-right: 15px;
+    /* space between greeting and links */
+}
+
+.header-user-menu .user-link {
+    color: white;
+    /* keeps links white */
+    
+    text-decoration: none;
+    /* removes underline */
+
+    margin-left: 10px;
+    /* space between links */
+
+    transition: color 0.3s ease;
+    /* smooth hover color change */
+}
+
+.header-user-menu .user-link:hover {
+    color: #ffd700;
+    /* gold/yellow color on hover */
+}
+
+
+/* User Menu */
+.header-user-menu {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.user-greeting {
+    color: white;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.user-link {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    transition: background 0.2s;
+}
+
+.user-link:hover {
+    background-color: rgba(7, 224, 15, 0.2);
+}
+
+/* Container */
+.container { 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 30px 20px; 
+}
+
+/* Master Statistics Cards */
+.master-stats { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; 
+    margin-bottom: 40px; 
+}
+
+.stat-card { 
+    background: white; 
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    border-left: 6px solid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover { 
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+/* Card Border Colors */
+.stat-card.total-power { border-left-color: #28a745; }
+.stat-card.active-plants { border-left-color: #dc3545; }
+.stat-card.running-units { border-left-color: #007bff; }
+.stat-card.standby-units { border-left-color: #ffc107; }
+.stat-card.total-units { border-left-color: #6c757d; }
+
+/* Stat Values */
+.stat-value { 
+    font-size: 3em; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+}
+
+.stat-value.total-power { color: #28a745; }
+.stat-value.active-plants { color: #dc3545; }
+.stat-value.running-units { color: #007bff; }
+.stat-value.standby-units { color: #ffc107; }
+.stat-value.total-units { color: #6c757d; }
+
+.stat-label { 
+    color: #666; 
+    font-size: 1.2em; 
+    font-weight: 500; 
+}
+
+.stat-sublabel { 
+    color: #999; 
+    font-size: 0.9em; 
+    margin-top: 5px; 
+}
+
+/* Plant Selection */
+.plant-selection { 
+    background: white; 
+    border-radius: 20px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+    padding: 30px; 
+    margin-bottom: 30px; 
+}
+
+.plant-selection h2 { 
+    color: #333; 
+    margin-bottom: 25px; 
+    font-size: 1.8em; 
+}
+
+.plant-buttons { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+}
+
+.plant-btn { 
+    background: #f8f9fa; 
+    border: 2px solid #e9ecef; 
+    padding: 20px; 
+    border-radius: 15px; 
+    cursor: pointer; 
+    transition: all 0.3s;
+    text-align: center;
+    user-select: none;
+}
+
+.plant-btn:hover { 
+    background: #007bff; 
+    color: white; 
+    border-color: #007bff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.plant-btn:active {
+    transform: translateY(-1px);
+}
+
+.plant-btn-title { 
+    font-size: 1.3em; 
+    font-weight: bold; 
+    margin-bottom: 8px; 
+}
+
+.plant-btn-info { 
+    font-size: 0.9em; 
+    opacity: 0.8; 
+}
+
+.plant-btn-power { 
+    font-size: 1.1em; 
+    font-weight: bold; 
+    margin-top: 8px; 
+}
+
+/* Status Indicators */
+.status-dot { 
+    width: 12px; 
+    height: 12px; 
+    border-radius: 50%; 
+    display: inline-block; 
+    margin-right: 8px;
+}
+
+.status-dot.online { 
+    background: #28a745; 
+    animation: pulse 2s infinite; 
+}
+
+.status-dot.standby { 
+    background: #ffc107; 
+}
+
+.status-dot.offline { 
+    background: #dc3545; 
+}
+
+@keyframes pulse { 
+    0%, 100% { opacity: 1; } 
+    50% { opacity: 0.6; } 
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header h1 { font-size: 2em; }
+    .header .subtitle { font-size: 1em; }
+    .master-stats { grid-template-columns: 1fr; }
+    .plant-buttons { grid-template-columns: repeat(2, 1fr); }
+    .header-user-menu {
+        position: static;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .plant-buttons { grid-template-columns: 1fr; }
+    .stat-value { font-size: 2.5em; }
+}

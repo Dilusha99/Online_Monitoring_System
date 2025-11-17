@@ -24,7 +24,7 @@ PLANT_NAMES = {
 }
 
 PLANT_CONFIG = {
-    1: 1, 2: 2, 3: 2, 4: 2, 5: 3, 6: 2,
+    1: 1, 2: 2, 3: 2, 4: 2, 5: 2, 6: 2,
     7: 2, 8: 2, 9: 3, 10: 2, 11: 1, 12: 2, 13: 2
 }
 
@@ -43,16 +43,26 @@ def send_data(data, attempt=1, max_attempts=3):
 def generate_esp32_json(plant_name, unit_id):
     """Generate ESP32-style JSON for one unit without calculating power"""
     return {
-        f"{plant_name}_u{unit_id}_power": random.randint(1000, 2000),
-        f"{plant_name}_u{unit_id}_current_L1": random.randint(100, 200),
-        f"{plant_name}_u{unit_id}_current_L2": random.randint(100, 200),
-        f"{plant_name}_u{unit_id}_current_L3": random.randint(100, 200),
-        f"{plant_name}_u{unit_id}_voltage_L12": random.randint(100, 230),
-        f"{plant_name}_u{unit_id}_voltage_L23": random.randint(100, 230),
-        f"{plant_name}_u{unit_id}_voltage_L13": random.randint(100, 230),
+        # f"{plant_name}_u{unit_id}_power": random.randint(1000, 2000),
+        # f"{plant_name}_u{unit_id}_current_L1": random.randint(100, 200),
+        # f"{plant_name}_u{unit_id}_current_L2": random.randint(100, 200),
+        # f"{plant_name}_u{unit_id}_current_L3": random.randint(100, 200),
+        # f"{plant_name}_u{unit_id}_voltage_L12": random.randint(100, 230),
+        # f"{plant_name}_u{unit_id}_voltage_L23": random.randint(100, 230),
+        # f"{plant_name}_u{unit_id}_voltage_L13": random.randint(100, 230),
+        # f"{plant_name}_u{unit_id}_energy": random.randint(1000000, 2000000),
+        # f"{plant_name}_u{unit_id}_runtime": random.randint(1000, 100000)
+        
+        f"{plant_name}_u{unit_id}_power": random.randint(000, 000),
+        f"{plant_name}_u{unit_id}_current_L1": random.randint(00, 00),
+        f"{plant_name}_u{unit_id}_current_L2": random.randint(00, 00),
+        f"{plant_name}_u{unit_id}_current_L3": random.randint(00, 00),
+        f"{plant_name}_u{unit_id}_voltage_L12": random.randint(00, 0),
+        f"{plant_name}_u{unit_id}_voltage_L23": random.randint(00, 0),
+        f"{plant_name}_u{unit_id}_voltage_L13": random.randint(00, 0),
         f"{plant_name}_u{unit_id}_energy": random.randint(1000000, 2000000),
         f"{plant_name}_u{unit_id}_runtime": random.randint(1000, 100000)
-    }
+      }
 
 def main():
     sample_count = 0
