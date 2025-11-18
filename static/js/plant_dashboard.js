@@ -152,26 +152,28 @@ function createGauge(canvas) {
     const ctx = canvas.getContext('2d');
     const id = canvas.id;
     
-    // Determine gauge type and unit ID from canvas ID
-    let type, color, maxValue;
+    // Get current value from the gauge-value element
+    const valueElement = canvas.parentElement.querySelector('.gauge-value div');
+    const value = parseFloat(valueElement.textContent) || 0;
+    
+    // Determine gauge type, color, and dynamic max value
+    let type, color, maxValue, minMaxValue;
     if (id.includes('voltage')) {
         type = 'voltage';
         color = '#007bff';
-        maxValue = 6500;
+        minMaxValue = 100; // Minimum scale for voltage
+        maxValue = Math.max(minMaxValue, value + 100);
     } else if (id.includes('current')) {
         type = 'current';
         color = '#ffc107';
-        maxValue = 250;
+        minMaxValue = 50; // Minimum scale for current
+        maxValue = Math.max(minMaxValue, value + 100);
     } else if (id.includes('power')) {
         type = 'power';
         color = '#28a745';
-        maxValue = 5000;
-    }
-    
-    // Get current value
-    const valueElement = canvas.parentElement.querySelector('.gauge-value div');
-    let value = parseFloat(valueElement.textContent) || 0;
-    
+        minMaxValue = 100; // Minimum scale for power
+        maxValue = Math.max(minMaxValue, value + 100);
+    }  
     // Draw gauge
     drawGauge(ctx, value, maxValue, color, canvas.offsetWidth);
 }

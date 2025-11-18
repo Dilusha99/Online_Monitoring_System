@@ -328,17 +328,17 @@ function updatePlantButtons(data) {
                     // Backend sends: 'online', 'standby', 'offline'
                     // CSS expects: 'running', 'standby', 'offline'
                     let statusClass = 'offline';
-                    let statusText = 'Off';
+                    let statusText = 'Offline';
                     
                     if (unit.status === 'online') {
                         statusClass = 'running';  // Map 'online' to 'running' CSS class
-                        statusText = 'Run';
+                        statusText = 'Running';
                     } else if (unit.status === 'standby') {
                         statusClass = 'standby';
                         statusText = 'Standby';
                     } else if (unit.status === 'offline') {
                         statusClass = 'offline';
-                        statusText = 'Off';
+                        statusText = 'Offline';
                     }
                     
                     unitStatusDot.className = `unit-status-dot ${statusClass}`;

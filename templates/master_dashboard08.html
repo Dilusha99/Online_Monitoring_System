@@ -230,7 +230,7 @@
 
                 .stat-value {
                     font-weight: 700;
-                    margin-bottom: 10px;
+                    margin-bottom: -10px;
                     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
                     transition: all 0.3s ease;
                 }
@@ -278,7 +278,7 @@
 
                 .stat-label {
                     color: rgba(255, 255, 255, 0.95);
-                    font-size: 1em;
+                    font-size: 1.2em;
                     font-weight: 600;
                     margin-bottom: 5px;
                     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -286,11 +286,11 @@
 
                 .stat-sublabel {
                     color: rgba(255, 255, 255, 0.7);
-                    font-size: 0.8em;
+                    font-size: 1em;
                     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
                 }
                 .unit {
-                    font-size: 0.4em;           /* Small relative to the 4.1em parent */
+                    font-size: 0.5em;           /* Small relative to the 4.1em parent */
                     vertical-align:align;      
                     margin-left: 5px;           
                     opacity: 0.9;               
@@ -628,9 +628,9 @@
                             <div class="unit-label">U{{ unit.unit_id }}</div>
                             <span class="unit-status-dot {{ unit.status }}"></span>
                             <div class="unit-status-text">
-                                {% if unit.status in ['online', 'running'] %}Run
-                                {% elif unit.status == 'standby' %}Stby
-                                {% else %}Off{% endif %}
+                                {% if unit.status in ['online', 'running'] %}Running
+                                {% elif unit.status == 'standby' %}standby
+                                {% else %}offline{% endif %}
                             </div>
                         </div>
                         {% endfor %}
