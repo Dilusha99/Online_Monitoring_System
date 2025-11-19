@@ -149,7 +149,7 @@ function updateDateTime() {
     const dateTimeElement = document.getElementById('currentDateTime');
     
     if (dateTimeElement) {
-        dateTimeElement.textContent = `${formattedTime} (GMT+5:30)`;  // Show only time
+        dateTimeElement.textContent = `${formattedTime}`;  // Show only time
     }
     
     // Optional: Update timezone-info with date
